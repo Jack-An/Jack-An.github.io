@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://Jack-An.github.io/"/>
-  <updated>2018-12-19T12:52:26.817Z</updated>
+  <updated>2018-12-19T13:22:37.186Z</updated>
   <id>https://Jack-An.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://Jack-An.github.io/2018/12/19/test/"/>
+    <id>https://Jack-An.github.io/2018/12/19/test/</id>
+    <published>2018-12-19T13:22:02.000Z</published>
+    <updated>2018-12-19T13:22:37.186Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Test-File"><a href="#Test-File" class="headerlink" title="Test File"></a>Test File</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Test-File&quot;&gt;&lt;a href=&quot;#Test-File&quot; class=&quot;headerlink&quot; title=&quot;Test File&quot;&gt;&lt;/a&gt;Test File&lt;/h1&gt;
+      
+    
+    </summary>
+    
+      <category term="计算机视觉" scheme="https://Jack-An.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>PASCAL VOC数据集</title>
