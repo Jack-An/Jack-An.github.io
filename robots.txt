@@ -1,0 +1,10 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+
+Sitemap: https://jack-an.github.io/sitemap.xml
+Sitemap: https://jack-an.github.io/baidusitemap.xml

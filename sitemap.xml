@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://Jack-An.github.io/2018/12/18/hello-world/</loc>
+    <loc>https://Jack-An.github.io/hello-world.html</loc>
     
-    <lastmod>2018-12-18T13:12:33.724Z</lastmod>
+    <lastmod>2018-12-19T04:32:08.143Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://Jack-An.github.io/categories/index.html</loc>
+    
+    <lastmod>2018-12-19T04:31:09.599Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://Jack-An.github.io/tags/index.html</loc>
+    
+    <lastmod>2018-12-19T02:01:47.812Z</lastmod>
     
   </url>
   
