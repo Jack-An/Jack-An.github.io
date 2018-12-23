@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Jack-An, Blog">
+  <meta name="keywords" content="Pytorch,Libtorch,WSL,">
 
 
 
@@ -83,17 +83,21 @@
 
 
 
-<meta name="description" content="Hello World">
+<meta name="description" content="WSL下的Libtorch配置OpenCV的配置">
+<meta name="keywords" content="Pytorch,Libtorch,WSL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="https://Jack-An.github.io/2018/12/18/hello-world/index.html">
+<meta property="og:title" content="libtorch 的配置以及简单使用">
+<meta property="og:url" content="https://Jack-An.github.io/2018/12/23/libtorch-test/index.html">
 <meta property="og:site_name" content="JACK&#39;s BLOG">
-<meta property="og:description" content="Hello World">
+<meta property="og:description" content="WSL下的Libtorch配置OpenCV的配置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-21T08:44:49.773Z">
+<meta property="og:image" content="https://jack-an.github.io/images/torch1.png">
+<meta property="og:image" content="https://jack-an.github.io/images/torch2.png">
+<meta property="og:updated_time" content="2018-12-23T08:51:06.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello world">
-<meta name="twitter:description" content="Hello World">
+<meta name="twitter:title" content="libtorch 的配置以及简单使用">
+<meta name="twitter:description" content="WSL下的Libtorch配置OpenCV的配置">
+<meta name="twitter:image" content="https://jack-an.github.io/images/torch1.png">
 
 
 
@@ -123,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://Jack-An.github.io/2018/12/18/hello-world/">
+  <link rel="canonical" href="https://Jack-An.github.io/2018/12/23/libtorch-test/">
 
 
 
 
 
-  <title>hello world | JACK's BLOG</title>
+  <title>libtorch 的配置以及简单使用 | JACK's BLOG</title>
   
 
 
@@ -289,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Jack-An.github.io/2018/12/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://Jack-An.github.io/2018/12/23/libtorch-test/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jack An">
@@ -306,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hello world</h1>
+          <h1 class="post-title" itemprop="name headline">libtorch 的配置以及简单使用</h1>
         
 
         <div class="post-meta">
@@ -318,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-18T21:32:13+08:00">
-                2018-12-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-23T15:40:35+08:00">
+                2018-12-23
               </time>
             
 
@@ -334,8 +338,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-21T16:44:49+08:00">
-                2018-12-21
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-23T16:51:06+08:00">
+                2018-12-23
               </time>
             
           </span>
@@ -353,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/Pytorch/" itemprop="url" rel="index">
+                    <span itemprop="name">Pytorch</span>
                   </a>
                 </span>
 
@@ -384,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  73 字
+                  1.3k 字
                 </span>
               
 
@@ -400,7 +404,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -408,7 +412,7 @@
 
           
               <div class="post-description">
-                  Hello World
+                  WSL下的Libtorch配置,OpenCV的配置
               </div>
           
 
@@ -425,15 +429,11 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h1><p>因为我的C++开发环境一直都是Windows下的Clion搭配WSL(Windows sub linux)，安装第三方库的时候比较方便（VS下的编译环境太复杂了，还各种问题）。这次要用到的库是libtorch，这个在Pytorch官网下载下来放到随便一个目录下解压即可，另外一个是OpenCV,我是用的OpenCV-3.4.4的版本，首先去官网下载到源码然后按照<a href="https://docs.opencv.org/3.4/d7/d9f/tutorial_linux_install.html下的教程编译即可" target="_blank" rel="noopener">install tutorial</a>（需要大概挺长时间的)。<br>注： 所有的代码均来自于<a href="https://github.com/iamhankai/cpp-pytorch" target="_blank" rel="noopener">iamhankai</a>,我只是稍微做了修改（原代码我跑不起来，可能是Libtorch有更新导致的），添加了一些注释。如果使用的不是Clion的话，可以参考iamhankai的Github给出的命令行的编译和执行过程。</p>
+<h1 id="配置C-项目环境"><a href="#配置C-项目环境" class="headerlink" title="配置C++项目环境"></a>配置C++项目环境</h1><p>使用Clion的话直接新建一个Project即可，编辑CMakeLists.txt文件，添加相应的库配置文件如下：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.10</span>)</span><br><span class="line"><span class="keyword">project</span>(CppProject)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">11</span>)</span><br><span class="line"><span class="keyword">set</span>(Torch_DIR ~/libtorch/share/cmake/Torch)   <span class="comment">#根据自己保存的路径输入</span></span><br><span class="line"><span class="keyword">set</span>(OpenCV_DIR ~/opencv-<span class="number">3.4</span>.<span class="number">4</span>/build)          <span class="comment">#编译OpenCV的时候创建的build文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">find_package</span>(Torch REQUIRED)                  <span class="comment">#查找库</span></span><br><span class="line"><span class="keyword">find_package</span>(OpenCV REQUIRED)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(CppProject main.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(CppProject <span class="variable">$&#123;OpenCV_LIBS&#125;</span> <span class="variable">$&#123;TORCH_LIBRARIES&#125;</span> )   <span class="comment">#添加链接文件</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="使用Python保存模型到本地"><a href="#使用Python保存模型到本地" class="headerlink" title="使用Python保存模型到本地"></a>使用Python保存模型到本地</h1><p>新建一个Python的脚本文件，这个文件主要是下载一个预训练模型然后使用JIT保存到本地。本且使用本地的一张图片来进行预测。代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载预训练模型</span></span><br><span class="line">model = torchvision.models.resnet18(pretrained=<span class="keyword">True</span>)</span><br><span class="line">model.eval()  <span class="comment"># 评估模式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成一个随机Tensor,Pytorch是基于动态图的框架，需要必须先计算一次前向传播</span></span><br><span class="line">example = torch.rand(<span class="number">1</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用torch.jit.trace生成一个torch.jit.ScriptModule</span></span><br><span class="line">traced_script_module = torch.jit.trace(model, example)</span><br><span class="line">traced_script_module.save(<span class="string">"model.pt"</span>)  <span class="comment"># 保存模型</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算一次前向传播所需要的时间</span></span><br><span class="line">batch = torch.rand(<span class="number">64</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line">start = time()</span><br><span class="line">output = traced_script_module(batch)</span><br><span class="line">stop = time()</span><br><span class="line">print(str(stop - start) + <span class="string">"s"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取本地的照片</span></span><br><span class="line">image = Image.open(<span class="string">'dog.png'</span>).convert(<span class="string">'RGB'</span>)</span><br><span class="line">default_transform = transforms.Compose([</span><br><span class="line">    transforms.Resize([<span class="number">224</span>, <span class="number">224</span>]),</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(mean=[<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>],</span><br><span class="line">                         std=[<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">])</span><br><span class="line">image = default_transform(image)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 前向传播</span></span><br><span class="line">output = traced_script_module(image.unsqueeze(<span class="number">0</span>))</span><br><span class="line"><span class="comment"># print(output[0, :10])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 预测打印Top-5</span></span><br><span class="line">labels = np.loadtxt(<span class="string">'synset_words.txt'</span>, dtype=str, delimiter=<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line">data_out = output[<span class="number">0</span>].data.numpy()</span><br><span class="line">sorted_idxs = np.argsort(-data_out)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, idx <span class="keyword">in</span> enumerate(sorted_idxs[:<span class="number">5</span>]):</span><br><span class="line">    print(<span class="string">f"label: <span class="subst">&#123;labels[idx]&#125;</span>, score: <span class="subst">&#123;data_out[idx]&#125;</span>"</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>运行结果如下：<br><img src="/../images/torch1.png" alt="torch1"></p>
+<h1 id="C-加载模型"><a href="#C-加载模型" class="headerlink" title="C++加载模型"></a>C++加载模型</h1><p>使用C++进行模型的加载，然后使用OpenCV来读取一张图片并执行预测，代码的过程和Python脚本差不多。下面是main.cpp代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;torch/script.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;torch/torch.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/imgproc/imgproc.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/core.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* main */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">//接受三个运行参数</span></span><br><span class="line">    <span class="comment">//1. 模型</span></span><br><span class="line">    <span class="comment">//2. 要预测的图片</span></span><br><span class="line">    <span class="comment">//3. label的文本</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cerr</span> &lt;&lt; <span class="string">"usage: CppProject &lt;path-to-exported-script-module&gt; "</span></span><br><span class="line">                  &lt;&lt; <span class="string">"&lt;path-to-image&gt;  &lt;path-to-category-text&gt;\n"</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//加载模型</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">shared_ptr</span>&lt;torch::jit::script::Module&gt; <span class="keyword">module</span> = torch::jit::load(argv[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    assert(<span class="keyword">module</span> != <span class="literal">nullptr</span>);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"load model ok\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//生成一个随机输入</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;torch::jit::IValue&gt; inputs;</span><br><span class="line">    inputs.emplace_back(torch::rand(&#123;<span class="number">64</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>&#125;));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算网络一次前向传播的需要时间</span></span><br><span class="line">    <span class="keyword">auto</span> t = (<span class="keyword">double</span>) cv::getTickCount();</span><br><span class="line">    <span class="keyword">module</span>-&gt;forward(inputs).toTensor();</span><br><span class="line">    t = (<span class="keyword">double</span>) cv::getTickCount() - t;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"execution time = %gs\n"</span>, t / cv::getTickFrequency());</span><br><span class="line">    inputs.pop_back();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 记载一张图片并且进行归一化</span></span><br><span class="line">    cv::Mat image;</span><br><span class="line">    image = cv::imread(argv[<span class="number">2</span>], <span class="number">1</span>);</span><br><span class="line">    cv::cvtColor(image, image, CV_BGR2RGB);  <span class="comment">//转化为RGB三通道</span></span><br><span class="line">    cv::Mat img_float;</span><br><span class="line">    image.convertTo(img_float, CV_32F, <span class="number">1.0</span> / <span class="number">255</span>);   <span class="comment">//首先归一化到[0,1]区间</span></span><br><span class="line">    cv::resize(img_float, img_float, cv::Size(<span class="number">224</span>, <span class="number">224</span>));  <span class="comment">//resize to 224，预训练的模型输入是batchsize x3 x 224 x 224</span></span><br><span class="line">    <span class="comment">//std::cout &lt;&lt; img_float.at&lt;cv::Vec3f&gt;(56,34)[1] &lt;&lt; std::endl;</span></span><br><span class="line">    <span class="keyword">auto</span> img_tensor = torch::CPU(torch::kFloat32).tensorFromBlob(img_float.data, &#123;<span class="number">1</span>, <span class="number">224</span>, <span class="number">224</span>, <span class="number">3</span>&#125;);   <span class="comment">//将cv::Mat转成tensor</span></span><br><span class="line">    img_tensor = img_tensor.permute(&#123;<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>&#125;);   <span class="comment">//翻转让通道是第二个维度</span></span><br><span class="line">    <span class="comment">//均值归一化</span></span><br><span class="line">    img_tensor[<span class="number">0</span>][<span class="number">0</span>] = img_tensor[<span class="number">0</span>][<span class="number">0</span>].sub_(<span class="number">0.485</span>).div_(<span class="number">0.229</span>);</span><br><span class="line">    img_tensor[<span class="number">0</span>][<span class="number">1</span>] = img_tensor[<span class="number">0</span>][<span class="number">1</span>].sub_(<span class="number">0.456</span>).div_(<span class="number">0.224</span>);</span><br><span class="line">    img_tensor[<span class="number">0</span>][<span class="number">2</span>] = img_tensor[<span class="number">0</span>][<span class="number">2</span>].sub_(<span class="number">0.406</span>).div_(<span class="number">0.225</span>);</span><br><span class="line">    <span class="keyword">auto</span> img_var = torch::autograd::make_variable(img_tensor, <span class="literal">false</span>);</span><br><span class="line">    inputs.emplace_back(img_var);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//对输入的图片进行前向传播计算</span></span><br><span class="line">    torch::Tensor out_tensor = <span class="keyword">module</span>-&gt;forward(inputs).toTensor();</span><br><span class="line">    <span class="comment">//std::cout &lt;&lt; out_tensor.slice(/*dim=*/1, /*start=*/0, /*end=*/10) &lt;&lt; '\n';</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 加载label的文件</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> label_file = argv[<span class="number">3</span>];</span><br><span class="line">    <span class="built_in">std</span>::<span class="function">ifstream <span class="title">rf</span><span class="params">(label_file.c_str())</span></span>;</span><br><span class="line">    CHECK(rf) &lt;&lt; <span class="string">"Unable to open labels file "</span> &lt;&lt; label_file;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> line;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span>&gt; labels;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">std</span>::getline(rf, line))</span><br><span class="line">        labels.push_back(line);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印score是Top-5的预测label和score</span></span><br><span class="line">    <span class="built_in">std</span>::tuple&lt;torch::Tensor, torch::Tensor&gt; result = out_tensor.sort(<span class="number">-1</span>, <span class="literal">true</span>);</span><br><span class="line">    torch::Tensor top_scores = <span class="built_in">std</span>::get&lt;<span class="number">0</span>&gt;(result)[<span class="number">0</span>];</span><br><span class="line">    torch::Tensor top_idxs = <span class="built_in">std</span>::get&lt;<span class="number">1</span>&gt;(result)[<span class="number">0</span>].toType(torch::kInt32);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> top_scores_a = top_scores.accessor&lt;<span class="keyword">float</span>, <span class="number">1</span>&gt;();  <span class="comment">//1是dim</span></span><br><span class="line">    <span class="keyword">auto</span> top_idxs_a = top_idxs.accessor&lt;<span class="keyword">int</span>, <span class="number">1</span>&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i) &#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"score: "</span> &lt;&lt; top_scores_a[i];</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"  label: "</span> &lt;&lt; labels[top_idxs_a[i]] &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>运行结果如下：<br><img src="/../images/torch2.png" alt="torch2"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>通过Python代码和C++的运行结果可以看出来，C++的执行还是更快一点的。而且Pytorch的C++写起来也还是听方便的，很多API和Python都差不多。</p>
 
       
     </div>
@@ -454,7 +454,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://Jack-An.github.io/2018/12/18/hello-world/" title="hello world">https://Jack-An.github.io/2018/12/18/hello-world/</a>
+    <a href="https://Jack-An.github.io/2018/12/23/libtorch-test/" title="libtorch 的配置以及简单使用">https://Jack-An.github.io/2018/12/23/libtorch-test/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -467,6 +467,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Pytorch/" rel="tag"># Pytorch</a>
+          
+            <a href="/tags/Libtorch/" rel="tag"># Libtorch</a>
+          
+            <a href="/tags/WSL/" rel="tag"># WSL</a>
+          
+        </div>
+      
 
       
       
@@ -476,15 +486,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/12/19/PASCAL-dataset/" rel="next" title="PASCAL VOC数据集">
+                <i class="fa fa-chevron-left"></i> PASCAL VOC数据集
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/19/PASCAL-dataset/" rel="prev" title="PASCAL VOC数据集">
-                PASCAL VOC数据集 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -651,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备环境"><span class="nav-number">1.</span> <span class="nav-text">准备环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置C-项目环境"><span class="nav-number">2.</span> <span class="nav-text">配置C++项目环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Python保存模型到本地"><span class="nav-number">3.</span> <span class="nav-text">使用Python保存模型到本地</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-加载模型"><span class="nav-number">4.</span> <span class="nav-text">C++加载模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -813,9 +823,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://Jack-An.github.io/2018/12/18/hello-world/';
-          this.page.identifier = '2018/12/18/hello-world/';
-          this.page.title = 'hello world';
+          this.page.url = 'https://Jack-An.github.io/2018/12/23/libtorch-test/';
+          this.page.identifier = '2018/12/23/libtorch-test/';
+          this.page.title = 'libtorch 的配置以及简单使用';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Jack.disqus.com/embed.js';
