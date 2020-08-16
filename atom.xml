@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://Jack-An.github.io/"/>
-  <updated>2020-08-16T08:05:38.564Z</updated>
+  <updated>2020-08-16T11:59:37.254Z</updated>
   <id>https://Jack-An.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>L114 - 二叉树展开为链表</title>
+    <link href="https://Jack-An.github.io/2020/08/16/leetcode114/"/>
+    <id>https://Jack-An.github.io/2020/08/16/leetcode114/</id>
+    <published>2020-08-16T11:52:25.000Z</published>
+    <updated>2020-08-16T11:59:37.254Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p><img src="/images/l114.png" alt="l114"></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>要的是先序遍历的结果，串到右子树上，左子树全部为空</p><h3 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h3><p>思路：<br>根节点的左子树—&gt; 右子树<br>原右子树-&gt; 左子树最右边的节点<br>原左子树-&gt; null </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">lang: golang </span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * type TreeNode struct &#123;</span><br><span class="line"> *     Val int</span><br><span class="line"> *     Left *TreeNode</span><br><span class="line"> *     Right *TreeNode</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">func flatten(root *TreeNode) &#123;</span><br><span class="line">   for nil != root &#123;</span><br><span class="line">      if nil == root.Left &#123;.  # 左子树为空，则继续看下一个节点</span><br><span class="line">         root = root.Right</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">         pre := root.Left</span><br><span class="line">         for nil != pre.Right &#123;</span><br><span class="line">            pre = pre.Right</span><br><span class="line">         &#125;</span><br><span class="line">         pre.Right = root.Right</span><br><span class="line">         root.Right = root.Left</span><br><span class="line">         root.Left = nil</span><br><span class="line">         root = root.Right</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h3><p>思路：<br>利用后序遍历 6 5 4 3 2 1<br>便利到5的时候，让5的右指针指向前一个节点6，即6 &lt;- 5 4 3 2 1<br>到4的时候，6 &lt;- 5 &lt;- 4 3 2 1<br>置当前节点的左指针为null</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">lang: golang </span><br><span class="line"></span><br><span class="line">var pre *TreeNode;</span><br><span class="line">func flatten(root *TreeNode)  &#123;</span><br><span class="line">    if(nil == root)&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    flatten(root.Right)</span><br><span class="line">    flatten(root.Left)</span><br><span class="line">    root.Right = pre;</span><br><span class="line">    root.Left = nil;</span><br><span class="line">    pre= root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Note: Go指针定义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var p *type</span><br></pre></td></tr></table></figure></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>自己是真的菜，现在看见算法题现在是完全没思路，看似是个先序遍历的问题，做的过程中就会发现没那么简单，做题有时候可以转化一下思路，利用后序遍历去解决先序遍历不能解决的问题</p>]]></content>
+    
+    <summary type="html">
+    
+      二叉树展开,树的遍历
+    
+    </summary>
+    
+      <category term="算法" scheme="https://Jack-An.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="LeetCode" scheme="https://Jack-An.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="https://Jack-An.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="二叉树" scheme="https://Jack-An.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>高性能MySQL笔记1 - 架构</title>
