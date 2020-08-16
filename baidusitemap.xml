@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://Jack-An.github.io/2020/08/16/mysql-note1/</loc>
+    <lastmod>2020-08-16T07:20:25.968Z</lastmod>
+  </url>  <url>
     <loc>https://Jack-An.github.io/2018/12/23/libtorch-test/</loc>
-    <lastmod>2018-12-23T09:14:43.572Z</lastmod>
+    <lastmod>2018-12-23T09:14:44.000Z</lastmod>
   </url>  <url>
     <loc>https://Jack-An.github.io/2018/12/19/PASCAL-dataset/</loc>
-    <lastmod>2018-12-22T10:36:42.149Z</lastmod>
+    <lastmod>2018-12-22T10:36:44.000Z</lastmod>
   </url>  <url>
     <loc>https://Jack-An.github.io/2018/12/18/hello-world/</loc>
-    <lastmod>2018-12-21T08:44:49.773Z</lastmod>
+    <lastmod>2018-12-21T08:44:50.000Z</lastmod>
   </url>
 </urlset>
