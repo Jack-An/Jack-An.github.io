@@ -83,19 +83,19 @@
 
 
 
-<meta name="description" content="二叉树展开树的遍历">
+<meta name="description" content="二叉树展开树的遍历medium">
 <meta name="keywords" content="LeetCode,算法,二叉树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="L114 - 二叉树展开为链表">
 <meta property="og:url" content="https://Jack-An.github.io/2020/08/16/leetcode114/index.html">
 <meta property="og:site_name" content="JACK&#39;s BLOG">
-<meta property="og:description" content="二叉树展开树的遍历">
+<meta property="og:description" content="二叉树展开树的遍历medium">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://jack-an.github.io/images/l114.png">
-<meta property="og:updated_time" content="2020-08-16T11:59:37.254Z">
+<meta property="og:updated_time" content="2020-08-16T12:08:34.977Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="L114 - 二叉树展开为链表">
-<meta name="twitter:description" content="二叉树展开树的遍历">
+<meta name="twitter:description" content="二叉树展开树的遍历medium">
 <meta name="twitter:image" content="https://jack-an.github.io/images/l114.png">
 
 
@@ -337,7 +337,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-16T19:59:37+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-16T20:08:34+08:00">
                 2020-08-16
               </time>
             
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  331 字
+                  328 字
                 </span>
               
 
@@ -411,7 +411,7 @@
 
           
               <div class="post-description">
-                  二叉树展开,树的遍历
+                  二叉树展开,树的遍历,medium
               </div>
           
 
@@ -428,12 +428,12 @@
       
 
       
-        <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p><img src="/images/l114.png" alt="l114"></p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/images/l114.png" alt="l114"></p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>要的是先序遍历的结果，串到右子树上，左子树全部为空</p>
 <h3 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h3><p>思路：<br>根节点的左子树—&gt; 右子树<br>原右子树-&gt; 左子树最右边的节点<br>原左子树-&gt; null </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">lang: golang </span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * type TreeNode struct &#123;</span><br><span class="line"> *     Val int</span><br><span class="line"> *     Left *TreeNode</span><br><span class="line"> *     Right *TreeNode</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">func flatten(root *TreeNode) &#123;</span><br><span class="line">   for nil != root &#123;</span><br><span class="line">      if nil == root.Left &#123;.  # 左子树为空，则继续看下一个节点</span><br><span class="line">         root = root.Right</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">         pre := root.Left</span><br><span class="line">         for nil != pre.Right &#123;</span><br><span class="line">            pre = pre.Right</span><br><span class="line">         &#125;</span><br><span class="line">         pre.Right = root.Right</span><br><span class="line">         root.Right = root.Left</span><br><span class="line">         root.Left = nil</span><br><span class="line">         root = root.Right</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * type TreeNode struct &#123;</span></span><br><span class="line"><span class="comment"> *     Val int</span></span><br><span class="line"><span class="comment"> *     Left *TreeNode</span></span><br><span class="line"><span class="comment"> *     Right *TreeNode</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">flatten</span><span class="params">(root *TreeNode)</span></span> &#123;</span><br><span class="line">   <span class="keyword">for</span> <span class="literal">nil</span> != root &#123;</span><br><span class="line">      <span class="keyword">if</span> <span class="literal">nil</span> == root.Left &#123;.  # 左子树为空，则继续看下一个节点</span><br><span class="line">         root = root.Right</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         pre := root.Left</span><br><span class="line">         <span class="keyword">for</span> <span class="literal">nil</span> != pre.Right &#123;</span><br><span class="line">            pre = pre.Right</span><br><span class="line">         &#125;</span><br><span class="line">         pre.Right = root.Right</span><br><span class="line">         root.Right = root.Left</span><br><span class="line">         root.Left = <span class="literal">nil</span></span><br><span class="line">         root = root.Right</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h3><p>思路：<br>利用后序遍历 6 5 4 3 2 1<br>便利到5的时候，让5的右指针指向前一个节点6，即6 &lt;- 5 4 3 2 1<br>到4的时候，6 &lt;- 5 &lt;- 4 3 2 1<br>置当前节点的左指针为null</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">lang: golang </span><br><span class="line"></span><br><span class="line">var pre *TreeNode;</span><br><span class="line">func flatten(root *TreeNode)  &#123;</span><br><span class="line">    if(nil == root)&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    flatten(root.Right)</span><br><span class="line">    flatten(root.Left)</span><br><span class="line">    root.Right = pre;</span><br><span class="line">    root.Left = nil;</span><br><span class="line">    pre= root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> pre *TreeNode;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">flatten</span><span class="params">(root *TreeNode)</span></span>  &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">nil</span> == root)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    flatten(root.Right)</span><br><span class="line">    flatten(root.Left)</span><br><span class="line">    root.Right = pre;</span><br><span class="line">    root.Left = <span class="literal">nil</span>;</span><br><span class="line">    pre= root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Note: Go指针定义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var p *type</span><br></pre></td></tr></table></figure></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>自己是真的菜，现在看见算法题现在是完全没思路，看似是个先序遍历的问题，做的过程中就会发现没那么简单，做题有时候可以转化一下思路，利用后序遍历去解决先序遍历不能解决的问题</p>
 
@@ -497,6 +497,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/16/leetcode415/" rel="prev" title="L415 - 字符串相加">
+                L415 - 字符串相加 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -585,7 +589,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -607,7 +611,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -663,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法一"><span class="nav-number">3.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法二"><span class="nav-number">4.</span> <span class="nav-text">解法二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法一"><span class="nav-number">3.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法二"><span class="nav-number">4.</span> <span class="nav-text">解法二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

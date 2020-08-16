@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[L415 - 字符串相加]]></title>
+    <url>%2F2020%2F08%2F16%2Fleetcode415%2F</url>
+    <content type="text"><![CDATA[题目 分析这是一道简单题，首先把短的字符串填充到跟长的一样，然后按照加法的定义计算即可，注意进位 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546func reverse(s string) string &#123; runes := []rune(s) for from, to := 0, len(runes)-1; from &lt; to; from, to = from+1, to-1 &#123; runes[from], runes[to] = runes[to], runes[from] &#125; return string(runes)&#125;func addStrings(num1 string, num2 string) string &#123; var inc int var num1Length = len(num1) var num2Length = len(num2) var addNum1 string var addNum2 string addZeroNum := int(math.Abs(float64(num1Length - num2Length))) addStr := strings.Repeat("0", addZeroNum) if num1Length &lt; num2Length &#123; addNum1 = addStr + num1 addNum2 = num2 &#125; else &#123; addNum1 = num1 addNum2 = addStr + num2 &#125; var result []string add1 := []rune(addNum1) add2 := []rune(addNum2) for idx := len(addNum1) - 1; idx &gt;= 0; idx-- &#123; n1, _ := strconv.Atoi(string(add1[idx])) n2, _ := strconv.Atoi(string(add2[idx])) sum := n1 + n2 + inc extra := sum % 10 //println(n1, n2, sum, extra) extraStr := strconv.Itoa(extra) result = append(result, extraStr) inc = sum / 10 &#125; if inc != 0 &#123; extraStr := strconv.Itoa(inc) result = append(result, extraStr) &#125; test := strings.Join(result, "") return reverse(test)&#125; 总结这道题比较简单，但是自己还是写了差不多一个小时，主要是golang的语法不熟悉，踩各种坑 Note: golang的string和rune，string存的可以说就是ascii,rune可以正常处理中文字符，string使用下标拿到的其实都是uint8 golang的string是immutable，即不可变的，不可以直接操作下标修改字符 atoi和itoa函数和C差不多，但是atoi是可能panic的 append函数是有返回值的，所以一般要写成a=append(a,x)的形式 golang竟然没有reverse函数。。。]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>算法</tag>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[L114 - 二叉树展开为链表]]></title>
     <url>%2F2020%2F08%2F16%2Fleetcode114%2F</url>
-    <content type="text"><![CDATA[题目： 分析要的是先序遍历的结果，串到右子树上，左子树全部为空 解法一思路：根节点的左子树—&gt; 右子树原右子树-&gt; 左子树最右边的节点原左子树-&gt; null 123456789101112131415161718192021222324252627lang: golang /** * Definition for a binary tree node. * type TreeNode struct &#123; * Val int * Left *TreeNode * Right *TreeNode * &#125; */func flatten(root *TreeNode) &#123; for nil != root &#123; if nil == root.Left &#123;. # 左子树为空，则继续看下一个节点 root = root.Right &#125; else &#123; pre := root.Left for nil != pre.Right &#123; pre = pre.Right &#125; pre.Right = root.Right root.Right = root.Left root.Left = nil root = root.Right &#125; &#125;&#125; 解法二思路：利用后序遍历 6 5 4 3 2 1便利到5的时候，让5的右指针指向前一个节点6，即6 &lt;- 5 4 3 2 1到4的时候，6 &lt;- 5 &lt;- 4 3 2 1置当前节点的左指针为null 12345678910111213lang: golang var pre *TreeNode;func flatten(root *TreeNode) &#123; if(nil == root)&#123; return; &#125; flatten(root.Right) flatten(root.Left) root.Right = pre; root.Left = nil; pre= root;&#125; Note: Go指针定义1var p *type 总结自己是真的菜，现在看见算法题现在是完全没思路，看似是个先序遍历的问题，做的过程中就会发现没那么简单，做题有时候可以转化一下思路，利用后序遍历去解决先序遍历不能解决的问题]]></content>
+    <content type="text"><![CDATA[题目 分析要的是先序遍历的结果，串到右子树上，左子树全部为空 解法一思路：根节点的左子树—&gt; 右子树原右子树-&gt; 左子树最右边的节点原左子树-&gt; null 1234567891011121314151617181920212223242526/** * Definition for a binary tree node. * type TreeNode struct &#123; * Val int * Left *TreeNode * Right *TreeNode * &#125; */func flatten(root *TreeNode) &#123; for nil != root &#123; if nil == root.Left &#123;. # 左子树为空，则继续看下一个节点 root = root.Right &#125; else &#123; pre := root.Left for nil != pre.Right &#123; pre = pre.Right &#125; pre.Right = root.Right root.Right = root.Left root.Left = nil root = root.Right &#125; &#125;&#125; 解法二思路：利用后序遍历 6 5 4 3 2 1便利到5的时候，让5的右指针指向前一个节点6，即6 &lt;- 5 4 3 2 1到4的时候，6 &lt;- 5 &lt;- 4 3 2 1置当前节点的左指针为null 123456789101112var pre *TreeNode;func flatten(root *TreeNode) &#123; if(nil == root)&#123; return; &#125; flatten(root.Right) flatten(root.Left) root.Right = pre; root.Left = nil; pre= root;&#125; Note: Go指针定义1var p *type 总结自己是真的菜，现在看见算法题现在是完全没思路，看似是个先序遍历的问题，做的过程中就会发现没那么简单，做题有时候可以转化一下思路，利用后序遍历去解决先序遍历不能解决的问题]]></content>
       <categories>
         <category>算法</category>
       </categories>
