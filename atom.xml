@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://Jack-An.github.io/"/>
-  <updated>2020-08-23T07:52:21.807Z</updated>
+  <updated>2020-08-23T08:41:00.522Z</updated>
   <id>https://Jack-An.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>L201 - 数字范围按位与</title>
+    <link href="https://Jack-An.github.io/2020/08/23/l201/"/>
+    <id>https://Jack-An.github.io/2020/08/23/l201/</id>
+    <published>2020-08-23T08:17:35.000Z</published>
+    <updated>2020-08-23T08:41:00.522Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/images/l201.jpg" alt="l201"></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>首先与的运算规律是： 只要有一个0，那么结果必为0<br>可以用个例子来观察一下运算的过程，例如[9, 12]<br><img src="/images/l201-1.png" alt="l201-1"></p><p>将二进制串对齐，可以看到数字按位与计算的结果就是所有数字的二进制表示的最长公共前缀，然后补零 </p><p>证明过程：<br>假设对于所有这些二进制串，前i位均相同，第i+1位开始不同，由于 $[m, n]$ 连续，所以第 $i+1$ 位在$[m, n]$的数字范围从小到大列举出来一定是前面全部是0，后面全部是1，在上图中对应$[9, 11]$均为0，$[12, 12]$ 均为1。并且一定存在连续的两个数$x$和$x+1$，满足$x$的第$i+1$位为0，后面全为$1$，$x+1$的第$i+1$位为1，后面全为0，对应上图中的例子即为11和12。这种形如$0111…$ 和$1000…$的二进制串的按位与的结果一定为$0000…$因此第$i+1$位开始的剩余位均为0，前i位由于均相同，因此按位与结果不变。最后的答案即为二进制字符串的公共前缀再用零补上后面的剩余位。</p><p>进一步来说，所有这些二进制字符串的公共前缀也即指定范围的起始和结束数字m和n的公共前缀（即在上面的示例中分别为9和12</p><h3 id="公共前缀-–-移位法"><a href="#公共前缀-–-移位法" class="headerlink" title="公共前缀 – 移位法"></a>公共前缀 – 移位法</h3><p>每次将两个数向右移动一位，直到相等，那么这个时候的剩下的就是最长的公共前缀，移位的过程中记录下移位的个数，然后将移位后剩下的数左移相应的位数即为结果</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rangeBitwiseAnd</span><span class="params">(m <span class="keyword">int</span>, n <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">shift := <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> m &lt; n &#123;</span><br><span class="line">m = m &gt;&gt; <span class="number">1</span></span><br><span class="line">n = n &gt;&gt; <span class="number">1</span></span><br><span class="line">shift++</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> m &lt;&lt; shift</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我是没想出来最长公共前缀的解法的，但一定直到不是通过蛮力的&amp;操作，看了下官方题解，收获很大，多积累吧</p>]]></content>
+    
+    <summary type="html">
+    
+      二进制,公共前缀,medium
+    
+    </summary>
+    
+      <category term="算法" scheme="https://Jack-An.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="LeetCode" scheme="https://Jack-An.github.io/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="https://Jack-An.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="最长公共前缀" scheme="https://Jack-An.github.io/tags/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/"/>
+    
+  </entry>
   
   <entry>
     <title>高性能MySQL笔记1 - 基准测试</title>
