@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>高性能MySQL笔记1 - 基准测试</title>
+      <link href="/2020/08/23/mysql-test/"/>
+      <url>/2020/08/23/mysql-test/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基准测试"><a href="#基准测试" class="headerlink" title="基准测试"></a>基准测试</h1><h2 id="基准测试策略"><a href="#基准测试策略" class="headerlink" title="基准测试策略"></a>基准测试策略</h2><ol><li>针对整个系统的整体测试(集成式测试)</li><li>单独测试MySQL（单组件式测试）</li></ol><h3 id="测试指标"><a href="#测试指标" class="headerlink" title="测试指标"></a>测试指标</h3><ol><li>吞吐量：单位时间内的事务处理数，测试单位是每秒事务数（TPS）</li><li>响应时间（延迟）：测试任务所需的整体时间</li><li>并发性：并发性基准测试需要关注的是正在工作中的并发操作，或者是同时工作中的线程数或者连接数。当并发增加时，需要测量吞吐量是否下降，响应时间是否变长。</li><li>可扩展性：给系统增加一倍的工作（资源），在理想情况下就能获得两倍的结果</li></ol><h2 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h2><p>Note:</p><ol><li>测试规划应该记录测试数据、系统配置步骤、如何测量和分析结果、预热方案</li><li>基准测试应该运行足够长的时间 </li><li>需要尽可能多的收集被测系统的信息</li></ol><h2 id="基准测试工具"><a href="#基准测试工具" class="headerlink" title="基准测试工具"></a>基准测试工具</h2><h3 id="集成式测试工具"><a href="#集成式测试工具" class="headerlink" title="集成式测试工具"></a>集成式测试工具</h3><ol><li>ab: APache HTTP服务器基准测试工具，测试HTTP服务器每秒可以最多处理多少请求</li><li>http_load: 类似ab </li><li>JMeter:java写的性能测试工具，比较复杂</li></ol><h3 id="单组件式测试工具"><a href="#单组件式测试工具" class="headerlink" title="单组件式测试工具"></a>单组件式测试工具</h3><ol><li>mysqlslap: 可以模拟服务器的负载，并输出计时信息</li><li>sysbench:多线程系统压测工具</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>L415 - 字符串相加</title>
       <link href="/2020/08/16/leetcode415/"/>
       <url>/2020/08/16/leetcode415/</url>
